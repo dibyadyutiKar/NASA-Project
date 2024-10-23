@@ -1,4 +1,7 @@
-const API_URL = 'v1';
+// const API_URL = 'http://localhost:8000/v1';
+// const API_URL = process.env.API_URL;
+const API_URL = process.env.REACT_APP_API_URL;
+console.log('HERE IS THE API URL', API_URL);
 
 // Load planets and return as JSON.
 async function httpGetPlanets() {
@@ -9,6 +12,7 @@ async function httpGetPlanets() {
 // Load launches, sort by flight number, and return as JSON.
 async function httpGetLaunches() {
   const response = await fetch(`${API_URL}/launches`);
+  console.log('Launches are here', response);
   const fetchedLaunches = await response.json();
   return fetchedLaunches.sort((a, b) => {
     return a.flightNumber - b.flightNumber;
