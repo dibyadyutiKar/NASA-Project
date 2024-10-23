@@ -6,7 +6,7 @@ services:
     networks:
       - mern_network
     environment:
-      MONGO_URL: mongodb://mongo:27017/nasadatabase
+      MONGO_URL: mongodb://mongodb:27017/nasadatabase
     depends_on:
       - mongodb
 
