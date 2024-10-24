@@ -6,7 +6,7 @@ services:
     networks:
       - mern_network
     environment:
-      MONGO_URL: mongodb://0.0.0.0:27017/nasadatabase
+      MONGO_URL: mongodb://mongodb:27017/nasadatabase
     depends_on:
       - mongodb
 
@@ -17,7 +17,7 @@ services:
     networks:
       - mern_network
     environment:
-      REACT_APP_API_URL: http://localhost:8000/v1
+      REACT_APP_API_URL: http://backend:8000/v1
 
   mongodb:
     image: mongo:latest
